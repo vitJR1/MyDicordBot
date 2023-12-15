@@ -86,3 +86,9 @@ def update_user_xp(user_id, xp=0):
         sql.execute(
             "UPDATE users SET xp = v + ? WHERE id = ?", [xp, user_id])
         db.commit()
+
+
+def top_messages():
+    sql.execute(
+        "SELECT * FROM users ORDER BY count_messages DESC LIMIT 10")
+    return sql.fetchall()
