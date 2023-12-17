@@ -1,10 +1,9 @@
+import env.include
+
 from os import getenv
+from source.bot import *
+from source.handlers.components.help import *
+from source.handlers.components.chat import *
 
-from discord import Client
-from discord.ext import commands
-
-client = Client()
-bot = commands.Bot(command_prefix=('/', '>'))
-bot.remove_command('help')
 
 bot.run(getenv('DISCORD_TOKEN'))
